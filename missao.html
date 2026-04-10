@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Community</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+
+body{background:#f5f7fb;color:#0f172a}
+
+/* NAVBAR */
+.navbar{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:20px 40px;background:#fff;
+  box-shadow:0 8px 25px rgba(0,0,0,0.06);
+}
+
+.menu{display:flex;gap:20px}
+.menu a{
+  text-decoration:none;color:#0f172a;
+  padding:10px 15px;border-radius:12px;
+  transition:.3s;
+}
+.menu a:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 20px rgba(0,0,0,0.08);
+}
+
+.main{max-width:1150px;margin:auto;padding:30px}
+
+/* BANNER */
+.banner{
+  background:linear-gradient(135deg,#2563eb,#4f46e5);
+  padding:45px;border-radius:25px;color:#fff;
+  margin-bottom:30px;
+  box-shadow:0 25px 60px rgba(0,0,0,0.2);
+}
+
+/* TITULOS */
+.section-title{
+  margin:35px 0 15px;
+  font-size:22px;font-weight:600;
+}
+
+/* CARDS */
+.cards-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:#fff;padding:22px;border-radius:20px;
+  position:relative;overflow:hidden;
+  box-shadow:0 15px 35px rgba(0,0,0,0.08);
+  transition:.4s;
+}
+
+.card::before{
+  content:"";
+  position:absolute;top:0;left:-100%;
+  width:100%;height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.7),transparent);
+  transition:.7s;
+}
+
+.card:hover::before{left:100%}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 25px 60px rgba(0,0,0,0.15);
+}
+
+/* PROGRESS */
+.progress{
+  margin-top:10px;height:8px;
+  background:#e2e8f0;border-radius:10px;
+}
+.progress span{
+  display:block;height:100%;
+  background:linear-gradient(90deg,#22c55e,#16a34a);
+}
+
+/* PROFESSORES */
+.teacher{
+  text-align:center;
+}
+.teacher img{
+  width:70px;border-radius:50%;
+}
+.teacher .info{
+  font-size:12px;opacity:.7;margin-top:5px;
+}
+.highlight{color:#22c55e}
+
+/* RANKING */
+.ranking-container{
+  margin-top:40px;background:#fff;
+  border-radius:25px;padding:25px;
+  box-shadow:0 25px 60px rgba(0,0,0,0.08);
+}
+
+.rank-item{
+  display:flex;justify-content:space-between;
+  padding:15px;border-radius:15px;
+  transition:.3s;
+}
+.rank-item:hover{
+  background:#f1f5f9;
+  transform:scale(1.01);
+}
+.rank-left{display:flex;gap:15px;align-items:center}
+.avatar{width:45px;border-radius:50%}
+.gold{border:1px solid gold;background:#fff8dc}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+  <div><b>Study Community</b></div>
+  <div class="menu">
+    <a href="#">Início</a>
+    <a href="#">Fórum</a>
+    <a href="#">Matérias</a>
+    <a href="#">Mentoria</a>
+    <a href="#">Perfil</a>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- BANNER -->
+<div class="banner">
+  <h1>🔥 Sua ofensiva está viva!</h1>
+  <p>Não quebre agora. Cada dia conta.</p>
+</div>
+
+<!-- CONTINUE -->
+<h2 class="section-title">Onde você parou</h2>
+<div class="cards-grid">
+  <div class="card">
+    <h3>Logística</h3>
+    <div class="progress"><span style="width:70%"></span></div>
+  </div>
+  <div class="card">
+    <h3>HTML & CSS</h3>
+    <div class="progress"><span style="width:85%"></span></div>
+  </div>
+</div>
+
+<!-- SUGESTÕES -->
+<h2 class="section-title">💡 Sugestões</h2>
+<div class="cards-grid">
+  <div class="card"><h3>Responsividade</h3></div>
+  <div class="card"><h3>Gestão de Estoque</h3></div>
+  <div class="card"><h3>JavaScript</h3></div>
+</div>
+
+<!-- NOVO: PROFESSORES -->
+<h2 class="section-title"> Professores recomendados</h2>
+<div class="cards-grid">
+
+  <div class="card teacher">
+    <img src="https://i.pravatar.cc/100?img=12">
+    <h3>Juliana Rocha</h3>
+    <div class="info">🎓 Web Desing</div>
+  </div>
+
+  <div class="card teacher">
+    <img src="https://i.pravatar.cc/100?img=13">
+    <h3>André Silva</h3>
+    <div class="info">🎓 Logística</div>
+
+  </div>
+
+  <div class="card teacher">
+    <img src="https://i.pravatar.cc/100?img=14">
+    <h3>Fernanda Costa</h3>
+    <div class="info">🎓 Web Desing </div>
+  </div>
+
+</div>
+
+<!-- RANKING -->
+<div class="ranking-container">
+  <h2>🏆 Ranking Global</h2>
+
+  <div class="rank-item gold">
+    <div class="rank-left">
+      <span>1</span>
+      <img class="avatar" src="https://i.pravatar.cc/60?img=1">
+      <b>Blademir</b>
+    </div>
+    <div>🔥 32 dias</div>
+  </div>
+
+  <div class="rank-item">
+    <div class="rank-left">
+      <span>2</span>
+      <img class="avatar" src="https://i.pravatar.cc/60?img=2">
+      <b>Robert</b>
+    </div>
+    <div>🔥 28 dias</div>
+    
+  </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
