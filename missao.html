@@ -5,41 +5,277 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Study Community</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="img/favicon.jpg">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#f5f7fb;color:#0f172a;}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#f5f7fb;
+  color:black;
+}
 
 /* NAVBAR */
 .navbar{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:20px 40px;background:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:20px 40px;
+
+  background:#fff;
+
   box-shadow:0 8px 25px rgba(0,0,0,0.06);
 }
 
-.menu{display:flex;gap:20px}
+.menu{
+  display:flex;
+  gap:20px;
+}
+
 .menu a{
   text-decoration:none;
-  color:#0f172a;
+  color:#2563eb;
   transition:.3s;
 }
-.menu a:hover{color:#3b5bdb;}
 
-.main{max-width:1150px;margin:auto;padding:30px}
+.menu a:hover{
+  color:#3b5bdb;
+}
 
-/* BANNER */
-.banner{
-  background:linear-gradient(135deg,#2563eb,#4f46e5);
-  padding:45px;border-radius:25px;color:#fff;
+.main{
+  max-width:1150px;
+  margin:auto;
+  padding:30px;
+}
+
+/* ========================= */
+/* HERO BANNER */
+/* ========================= */
+
+.hero-banner{
+
+  position:relative;
+  overflow:hidden;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  gap:40px;
+
+  min-height:420px;
+
+  padding:70px;
+
+  border-radius:35px;
+
+  margin-bottom:40px;
+
+  background:
+  radial-gradient(circle at top left, rgba(0,255,255,0.12), transparent 35%),
+  linear-gradient(180deg,#031b4e 0%, #063b72 45%, #07889b 100%);
+
+  box-shadow:
+  0 30px 80px rgba(0,0,0,0.18);
+
+}
+
+.hero-banner::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:500px;
+  height:500px;
+
+  border-radius:50%;
+
+  background:
+  radial-gradient(circle, rgba(0,255,255,0.12), transparent 70%);
+
+  top:-200px;
+  right:-100px;
+
+}
+
+.hero-left{
+
+  position:relative;
+  z-index:2;
+
+  max-width:560px;
+
+}
+
+.hero-mini{
+
+  display:inline-block;
+
+  padding:10px 18px;
+
+  border-radius:999px;
+
+  background:rgba(255,255,255,0.12);
+
+  color:#dbeafe;
+
+  margin-bottom:20px;
+
+  font-size:14px;
+
+  backdrop-filter:blur(10px);
+
+}
+
+.hero-title{
+
+  color:white;
+
+  font-size:58px;
+
+  line-height:1.05;
+
+  margin-bottom:20px;
+
+  font-weight:700;
+
+}
+
+.hero-sub{
+
+  color:#dbeafe;
+
+  font-size:18px;
+
+  line-height:1.7;
+
   margin-bottom:30px;
-  box-shadow:0 25px 60px rgba(0,0,0,0.2);
+
+}
+
+/* botão */
+.streak-btn{
+
+  border:none;
+
+  cursor:pointer;
+
+  padding:20px 30px;
+
+  border-radius:22px;
+
+  color:white;
+
+  font-size:18px;
+
+  font-weight:600;
+
+  background:
+  linear-gradient(135deg,#4f46e5,#2563eb,#06b6d4);
+
+  transition:0.35s;
+
+  box-shadow:
+  0 20px 40px rgba(37,99,235,0.35);
+
+}
+
+.streak-btn:hover{
+
+  transform:translateY(-5px) scale(1.03);
+
+  box-shadow:
+  0 30px 60px rgba(37,99,235,0.4);
+
+}
+
+/* mascote */
+.hero-mascot{
+
+  position:relative;
+  z-index:2;
+
+}
+
+.hero-mascot img{
+
+  width:420px;
+
+  display:block;
+
+  filter:
+  drop-shadow(0 0 30px rgba(0,255,255,0.18));
+
+}
+
+/* nuvem */
+.speech-bubble{
+
+  position:absolute;
+
+  top:20px;
+  left:-90px;
+
+  background:white;
+
+  color:#063b72;
+
+  width:250px;
+
+  padding:18px 20px;
+
+  border-radius:25px;
+
+  font-weight:600;
+
+  font-size:15px;
+
+  box-shadow:
+  0 20px 40px rgba(0,0,0,0.18);
+
+  animation:flutuar 3s ease-in-out infinite;
+
+}
+
+.speech-bubble::after{
+
+  content:"";
+
+  position:absolute;
+
+  right:25px;
+  bottom:-14px;
+
+  border-width:14px 14px 0 14px;
+  border-style:solid;
+
+  border-color:white transparent transparent transparent;
+
+}
+
+@keyframes flutuar{
+
+  0%{transform:translateY(0px);}
+  50%{transform:translateY(-8px);}
+  100%{transform:translateY(0px);}
+
 }
 
 /* TITULOS */
 .section-title{
   margin:35px 0 15px;
-  font-size:22px;font-weight:600;
+  font-size:22px;
+  font-weight:600;
 }
 
 /* CARDS */
@@ -50,78 +286,196 @@ body{background:#f5f7fb;color:#0f172a;}
 }
 
 .card{
-  background:#fff;padding:22px;border-radius:20px;
+  background:#fff;
+  padding:22px;
+  border-radius:20px;
+
   box-shadow:0 15px 35px rgba(0,0,0,0.08);
+
   transition:.4s;
 }
+
 .card:hover{
   transform:translateY(-8px);
+
   box-shadow:0 25px 60px rgba(0,0,0,0.15);
 }
 
 /* PROGRESS */
 .progress{
-  margin-top:10px;height:8px;
-  background:#e2e8f0;border-radius:10px;
+  margin-top:10px;
+  height:8px;
+
+  background:#e2e8f0;
+
+  border-radius:10px;
 }
+
 .progress span{
-  display:block;height:100%;
+  display:block;
+  height:100%;
+
   background:linear-gradient(90deg,#22c55e,#16a34a);
 }
 
-/* MOSTRAR INFO */
+/* INFO */
 .info-extra{
   display:none;
   font-size:13px;
   margin-top:10px;
 }
+
 .card:hover > .info-extra{
   display:block;
 }
 
+/* organização das matérias */
+.materia{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:6px 0;
+
+  font-size:13px;
+
+  border-bottom:1px solid #e2e8f0;
+}
+
+.materia:last-child{
+  border-bottom:none;
+}
+
+/* botão */
+.btn-voltar{
+
+  margin-top:12px;
+
+  padding:10px 16px;
+
+  border:none;
+  border-radius:14px;
+
+  background:linear-gradient(135deg,#4f46e5,#3b82f6);
+
+  color:white;
+
+  font-size:13px;
+  font-weight:500;
+
+  cursor:pointer;
+
+  transition:0.3s;
+
+}
+
+.btn-voltar:hover{
+  transform:scale(1.05);
+
+  box-shadow:0 10px 25px rgba(79,70,229,0.4);
+}
+
 /* PROFESSORES */
-.teacher{text-align:center;}
-.teacher img{width:70px;border-radius:50%;}
-.teacher .info{font-size:12px;opacity:.7;margin-top:5px;}
+.teacher{
+  text-align:center;
+}
+
+.teacher img{
+  width:70px;
+  border-radius:50%;
+}
+
+.teacher .info{
+  font-size:12px;
+  opacity:.7;
+  margin-top:5px;
+}
 
 /* RANKING */
 .ranking-container{
   margin-top:40px;
+
   background:rgba(255,255,255,0.7);
+
   backdrop-filter:blur(10px);
+
   border-radius:25px;
+
   padding:25px;
+
   box-shadow:0 25px 60px rgba(0,0,0,0.08);
 }
 
 .rank-item{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:15px 20px;border-radius:18px;margin-bottom:12px;
-  background:white;transition:.3s;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:15px 20px;
+
+  border-radius:18px;
+
+  margin-bottom:12px;
+
+  background:white;
+
+  transition:.3s;
 }
+
 .rank-item:hover{
   transform:translateY(-4px);
+
   box-shadow:0 15px 30px rgba(0,0,0,0.1);
 }
 
 .rank-left{
-  display:flex;align-items:center;gap:12px;
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
 
-.avatar{width:50px;border-radius:50%}
-.gold{border:1px solid gold;background:#fff8dc}
+.avatar{
+  width:50px;
+  border-radius:50%;
+}
+
+.gold{
+  border:1px solid gold;
+  background:#fff8dc;
+}
 
 /* AYLA */
 .apple-banner{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:80px 60px;border-radius:30px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:80px 60px;
+
+  border-radius:30px;
+
   background:linear-gradient(135deg,#1e3a8a,#2563eb,#3b82f6);
-  color:white;margin:40px auto;max-width:1100px;
+
+  color:white;
+
+  margin:40px auto;
+
+  max-width:1100px;
 }
 
-.banner-text{max-width:500px;}
-.banner-text h1{font-size:48px;margin-bottom:20px;}
-.banner-text p{font-size:18px;margin-bottom:25px;}
+.banner-text{
+  max-width:500px;
+}
+
+.banner-text h1{
+  font-size:48px;
+  margin-bottom:20px;
+}
+
+.banner-text p{
+  font-size:18px;
+  margin-bottom:25px;
+}
 
 .sugestoes-grid{
   display:grid;
@@ -131,62 +485,109 @@ body{background:#f5f7fb;color:#0f172a;}
 
 .sugestao{
   background:rgba(255,255,255,0.12);
-  padding:18px;border-radius:18px;font-size:14px;
-  transition:0.3s;cursor:pointer;
+
+  padding:18px;
+
+  border-radius:18px;
+
+  font-size:14px;
+
+  transition:0.3s;
+
+  cursor:pointer;
 }
+
 .sugestao:hover{
-  background:white;color:#2563eb;
+  background:white;
+  color:#2563eb;
+
   transform:translateY(-6px);
 }
 
 .banner-img img{
-  width:350px;border-radius:25px;
+  width:350px;
+
+  border-radius:25px;
+
   box-shadow:0 30px 60px rgba(0,0,0,0.3);
 }
+
 /* FOOTER */
 .footer{
-    text-align:center;
-    margin:40px;
+  text-align:center;
+  margin:40px;
 }
+
 footer{
-    margin-top:60px;
-    padding:30px 0;
-    text-align:center;
-    background:#ffffff;
+  margin-top:60px;
+
+  padding:30px 0;
+
+  text-align:center;
+
+  background:#ffffff;
 }
 
 .footer-line{
-    width:80%;
-    max-width:900px;
-    height:1px;
-    background:linear-gradient(to right, transparent, #6c63ff, transparent);
-    margin:0 auto 20px;
+  width:80%;
+  max-width:900px;
+
+  height:1px;
+
+  background:linear-gradient(to right, transparent, #6c63ff, transparent);
+
+  margin:0 auto 20px;
 }
 
 .footer p{
-    color:#7a7a9d;
-    font-size:14px;
-    letter-spacing:1px;
-}
-.footer{
-    margin-top:60px;
-    padding:30px 0;
-    text-align:center;
-    background:#ffffff;
+  color:#7a7a9d;
+
+  font-size:14px;
+
+  letter-spacing:1px;
 }
 
-.footer-line{
-    width:80%;
-    max-width:900px;
-    height:1px;
-    background:linear-gradient(to right, transparent, #6c63ff, transparent);
-    margin:0 auto 20px;
+/* RESPONSIVO */
+@media(max-width:980px){
+
+.hero-banner{
+
+  flex-direction:column;
+
+  text-align:center;
+
+  padding:50px 30px;
+
 }
 
-.footer p{
-    color:#7a7a9d;
-    font-size:14px;
-    letter-spacing:1px;
+.hero-title{
+  font-size:42px;
+}
+
+.hero-mascot img{
+  width:280px;
+}
+
+.speech-bubble{
+
+  position:relative;
+
+  left:0;
+  top:0;
+
+  margin:0 auto 20px;
+
+}
+
+.speech-bubble::after{
+  display:none;
+}
+
+.apple-banner{
+  flex-direction:column;
+  text-align:center;
+}
+
 }
 
 </style>
@@ -196,170 +597,348 @@ footer{
 
 <div class="navbar">
   <div><b>Study Community</b></div>
+
   <div class="menu">
     <a href="#">Início</a>
     <a href="forum.html">Fórum</a>
     <a href="#">Matérias</a>
     <a href="#">Mentoria</a>
+    <a href="missao.html">Missão</a>
     <a href="#">Perfil</a>
   </div>
 </div>
 
 <div class="main">
 
-<div class="banner">
-  <h1>🔥 Sua ofensiva está viva!</h1>
-  <p>Não quebre agora. Cada dia conta.</p>
+<!-- HERO -->
+<div class="hero-banner">
+
+  <div class="hero-left">
+
+    <div class="hero-mini">
+      🔥 Sua sequência continua viva
+    </div>
+
+    <h1 class="hero-title">
+      Transforme estudo<br>
+      em evolução diária.
+    </h1>
+
+    <p class="hero-sub">
+      Complete desafios, ganhe XP, desbloqueie missões
+      e mantenha sua ofensiva ativa todos os dias.
+    </p>
+
+    <button class="streak-btn" onclick="abrirJogos()">
+      ⚡ Mantenha sua ofensiva viva
+    </button>
+
+  </div>
+
+  <div class="hero-mascot">
+
+    <div class="speech-bubble">
+      “Você está mais forte a cada lição.”
+    </div>
+
+    <img src="img/fluxo2.png">
+
+  </div>
+
 </div>
 
 <h2 class="section-title">Onde você parou</h2>
 
-<!-- ✅ CORRIGIDO AQUI -->
 <div class="cards-grid">
 
   <div class="card">
     <h3>Logística</h3>
-    <div class="progress"><span style="width:70%"></span></div>
-    <p class="info-extra">
-      Cadeia de suprimentos — 70% <br>
-      Estoque — 65% <br>
-      Transporte — 70%
-    </p>
+
+    <div class="progress">
+      <span style="width:70%"></span>
+    </div>
+
+    <div class="info-extra">
+
+      <div class="materia">
+        <span>Cadeia de suprimentos</span>
+        <span>70%</span>
+      </div>
+
+      <div class="materia">
+        <span>Estoque</span>
+        <span>65%</span>
+      </div>
+
+      <div class="materia">
+        <span>Transporte</span>
+        <span>70%</span>
+      </div>
+
+      <button class="btn-voltar" onclick="voltarLicao('logistica')">
+        ▶ Continuar lição
+      </button>
+
+    </div>
   </div>
 
   <div class="card">
+
     <h3>HTML & CSS</h3>
-    <div class="progress"><span style="width:85%"></span></div>
-    <p class="info-extra">
-      HTML básico — 95% <br>
-      CSS layout — 80% <br>
-      Responsividade — 75%
-    </p>
+
+    <div class="progress">
+      <span style="width:85%"></span>
+    </div>
+
+    <div class="info-extra">
+
+      <div class="materia">
+        <span>HTML básico</span>
+        <span>95%</span>
+      </div>
+
+      <div class="materia">
+        <span>CSS layout</span>
+        <span>80%</span>
+      </div>
+
+      <div class="materia">
+        <span>Responsividade</span>
+        <span>75%</span>
+      </div>
+
+      <button class="btn-voltar" onclick="voltarLicao('html')">
+        ▶ Continuar lição
+      </button>
+
+    </div>
+
   </div>
 
 </div>
 
 <h2 class="section-title">💡 Sugestões</h2>
+
 <div class="cards-grid">
-  <div class="card"><h3>Responsividade</h3></div>
-  <div class="card"><h3>Gestão de Estoque</h3></div>
-  <div class="card"><h3>JavaScript</h3></div>
+
+  <div class="card">
+    <h3>Responsividade</h3>
+  </div>
+
+  <div class="card">
+    <h3>Gestão de Estoque</h3>
+  </div>
+
+  <div class="card">
+    <h3>JavaScript</h3>
+  </div>
+
 </div>
 
 <h2 class="section-title">Professores recomendados</h2>
+
 <div class="cards-grid">
+
   <div class="card teacher">
     <img src="https://i.pravatar.cc/100?img=12">
-    <h3>Juliana Rocha</h3>
-    <div class="info">🎓 Web Design</div>
+
+    <h3>Gilberto Gil</h3>
+
+    <div class="info">
+      🎓 Web Design
+    </div>
   </div>
 
   <div class="card teacher">
     <img src="https://i.pravatar.cc/100?img=13">
+
     <h3>André Silva</h3>
-    <div class="info">🎓 Logística</div>
+
+    <div class="info">
+      🎓 Logística
+    </div>
   </div>
 
   <div class="card teacher">
     <img src="https://i.pravatar.cc/100?img=14">
+
     <h3>Fernanda Costa</h3>
-    <div class="info">🎓 Web Design</div>
+
+    <div class="info">
+      🎓 Web Design
+    </div>
   </div>
+
 </div>
 
-<!-- RANKING -->
 <div class="ranking-container">
+
   <h2>🏆 Ranking Global</h2>
+
   <div id="ranking"></div>
+
 </div>
 
-<!-- AYLA -->
 <div class="apple-banner">
+
   <div class="banner-text">
-      <h1>Aprenda de forma inteligente.</h1>
-      <p>Tire dúvidas com a Ayla e evolua mais rápido.</p>
 
-      <div class="sugestoes-grid" id="sugestoes"></div>
+    <h1>Aprenda de forma inteligente.</h1>
 
-      <div style="margin-top:20px;">
-        <span onclick="trocarSugestoes()" style="cursor:pointer;font-size:22px;">→</span>
-      </div>
+    <p>
+      Tire dúvidas com a Ayla e evolua mais rápido.
+    </p>
+
+    <div class="sugestoes-grid" id="sugestoes"></div>
+
+    <div style="margin-top:20px;">
+      <span onclick="trocarSugestoes()" style="cursor:pointer;font-size:22px;">
+        →
+      </span>
+    </div>
+
   </div>
 
   <div class="banner-img">
-      <img src="img/ayla.png">
+    <img src="img/ayla.png">
   </div>
+
 </div>
 
 </div>
-<!-- FOOTER -->
+
 <footer class="footer">
+
   <div class="footer-line"></div>
-  <p>Study Community ✦ Aprenda, compartilhe e evolua</p>
+
+  <p>
+    Study Community ✦ Aprenda, compartilhe e evolua
+  </p>
+
 </footer>
 
 <script>
 
+function abrirJogos(){
+  window.location.href = "jogos.html";
+}
+
+function voltarLicao(area){
+
+  if(area === "logistica"){
+    window.location.href = "logistica.html";
+  }
+
+  else if(area === "html"){
+    window.location.href = "htmlaula.html";
+  }
+
+}
+
 /* RANKING */
 let usuarios = [
-["Blademir",32],["Robert",28],["Amanda",25],
-["Lucas",22],["Julia",21],["Carlos",19],
-["Beatriz",18],["Rafael",17],["Larissa",16]
+
+["Blademir",32],
+["Robert",28],
+["Amanda",25],
+["Lucas",22],
+["Julia",21],
+["Carlos",19],
+["Beatriz",18],
+["Rafael",17],
+["Larissa",16]
+
 ];
 
 let html = "";
+
 usuarios.forEach((u,i)=>{
-let medalha = i==0?"🥇":i==1?"🥈":i==2?"🥉":(i+1);
+
+let medalha =
+i==0?"🥇":
+i==1?"🥈":
+i==2?"🥉":
+(i+1);
 
 html += `
+
 <div class="rank-item ${i==0?"gold":""}">
+
   <div class="rank-left">
+
     <span>${medalha}</span>
+
     <img class="avatar" src="https://i.pravatar.cc/60?img=${i+1}">
+
     <b>${u[0]}</b>
+
   </div>
-  <div>🔥 ${u[1]} dias</div>
+
+  <div>
+    🔥 ${u[1]} dias
+  </div>
+
 </div>
+
 `;
+
 });
 
 document.getElementById("ranking").innerHTML = html;
 
-/* SUGESTÕES */
 let lista1 = [
+
 "Como alinhar elementos com Flexbox?",
 "Por que meu JavaScript não funciona?",
 "Como fazer site responsivo?",
 "Como organizar CSS?"
+
 ];
 
 let lista2 = [
+
 "Como controlar estoque melhor?",
 "Como reduzir custos logísticos?",
 "Melhor estratégia logística?",
 "Como estudar melhor?"
+
 ];
 
 let atual = 1;
 
 function renderSugestoes(lista){
-    let html = "";
-    lista.forEach(texto=>{
-        html += `<div class="sugestao">${texto}</div>`;
-    });
-    document.getElementById("sugestoes").innerHTML = html;
+
+  let html = "";
+
+  lista.forEach(texto=>{
+
+    html += `
+      <div class="sugestao">${texto}</div>
+    `;
+
+  });
+
+  document.getElementById("sugestoes").innerHTML = html;
 }
 
 renderSugestoes(lista1);
 
 function trocarSugestoes(){
-    if(atual === 1){
-        renderSugestoes(lista2);
-        atual = 2;
-    } else {
-        renderSugestoes(lista1);
-        atual = 1;
-    }
+
+  if(atual === 1){
+
+    renderSugestoes(lista2);
+
+    atual = 2;
+
+  } else {
+
+    renderSugestoes(lista1);
+
+    atual = 1;
+
+  }
+
 }
 
 </script>
